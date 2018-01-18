@@ -7,15 +7,18 @@
  */
 namespace mistermarvin\rsa;
 
-class Rsa{
+use yii\base\Behavior;
+
+class Rsa extends Behavior
+{
 
     public $public_key;
     public $private_key;
 
     public $config = [
-                    "digest_alg" => "sha512",
-                    "private_key_bits" => 4096,           //字节数  512 1024 2048  4096 等
-                    "private_key_type" => OPENSSL_KEYTYPE_RSA,   //加密类型
+                    "digest_alg" => "sha512",                   //hash_algos()
+                    "private_key_bits" => 4096,                 //  512 1024 2048  4096
+                    "private_key_type" => OPENSSL_KEYTYPE_RSA,
             ];
 
 
@@ -26,10 +29,10 @@ class Rsa{
         openssl_pkey_export($res, $private_key);
         $public_key = openssl_pkey_get_details($res);
 
-        $this->public_key = $private_key;
+        $this->private_key = $private_key;
         $this->public_key = $public_key['key'];
 
-        return ['private_key' => $this->public_key, 'public_key' => $this->private_key];
+        return ['private_key' => $this->private_key, 'public_key' => $this->public_key];
     }
 
 
@@ -44,8 +47,8 @@ class Rsa{
     //_________________________________________________________________________________________
     public function decrypt($data)
     {
-        $decrypted = base64_decode($data);
-        openssl_private_decrypt($decrypted, $decrypted, $this->private_key);
+        $data = base64_decode($data);
+        openssl_private_decrypt($data, $decrypted, $this->private_key);
         return $decrypted;
     }
 }

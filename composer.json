@@ -4,6 +4,7 @@
     "keywords": ["yii2", "framework", "ras"],
     "type": "yii2-extension",
     "license": "MIT",
+    "minimum-stability": "stable",
     "support": {
         "issues": "https://github.com/Mister-marvin/yii2-rsa/issues",
         "source": "https://github.com/Mister-marvin/yii2-rsa"
