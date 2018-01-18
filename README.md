@@ -4,13 +4,11 @@ rsa
 
 getKey:
 
-{
-
 		$rsa = Yii::$app->rsa;
 		$k = $rsa->generateKey();
 		print_r($k['public_key']);
 		print_r($k['private_key']);
-}
+
 
 
 config:
@@ -28,9 +26,6 @@ config:
 
 use:
 
-{
-
  	$rsa = Yii::$app->rsa;
 	$data = $rsa->encrypt('hello rsa');
 	echo $rsa->decrypt($data);
-}
