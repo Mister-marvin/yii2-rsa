@@ -26,6 +26,7 @@ config:
 
 
 use:
+
 public function actionIndex(){
 
  	$rsa = Yii::$app->rsa;
