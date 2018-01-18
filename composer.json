@@ -1,0 +1,25 @@
+{
+    "name": "Mister-marvin/yii2-rsa",
+    "description": "Yii 2 Rsa",
+    "keywords": ["yii2", "framework", "ras"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+        "issues": "https://github.com/Mister-marvin/yii2-rsa/issues",
+        "source": "https://github.com/Mister-marvin/yii2-rsa"
+    },
+    "authors": {
+        "name": "marvin",
+        "email":"676993761@qq.com"
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "*"
+    },
+
+    "autoload": {
+        "psr-4":{
+            "mistermarvin\\rsa\\": "src/"
+        }
+    }
+}
