@@ -3,7 +3,8 @@ rsa
 
 
 getKey:
- public function actionIndex(){
+
+{
 
 		$rsa = Yii::$app->rsa;
 		$k = $rsa->generateKey();
@@ -27,7 +28,7 @@ config:
 
 use:
 
-public function actionIndex(){
+{
 
  	$rsa = Yii::$app->rsa;
 	$data = $rsa->encrypt('hello rsa');
