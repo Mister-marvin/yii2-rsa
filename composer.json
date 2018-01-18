@@ -8,10 +8,10 @@
         "issues": "https://github.com/Mister-marvin/yii2-rsa/issues",
         "source": "https://github.com/Mister-marvin/yii2-rsa"
     },
-    "authors": {
+    "authors": [{
         "name": "marvin",
         "email":"676993761@qq.com"
-    },
+    }],
     "require": {
         "php": ">=5.4.0",
         "yiisoft/yii2": "*"
