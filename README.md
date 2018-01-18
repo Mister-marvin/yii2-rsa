@@ -11,9 +11,11 @@ getKey:
 		print_r($k['private_key']);
 }
 
+
 config:
 
- 'components' => [
+'components' => [
+
  	'rsa'=>[
 			'class' => 'mistermarvin\rsa\Rsa',
 			'public_key' => $params['rsa']['publicKey'],
@@ -22,8 +24,10 @@ config:
 	....
 ]
 
+
 use:
- public function actionIndex(){
+public function actionIndex(){
+
  	$rsa = Yii::$app->rsa;
 	$data = $rsa->encrypt('hello rsa');
 	echo $rsa->decrypt($data);
